@@ -1,7 +1,7 @@
 <ng-container *ngIf="profile">
     <div>
         <img id="profile-picture"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFBgO_ed2rAuqV9Txlfdgr4tLk_MgyqRZODx8wTl92NCNX0Pqd" />
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFBgO_ed2rAuqV9Txlfdgr4tLk_MgyqRZODx8wTl92NCNX0Pqd" alt="profile-picture" />
         <h1>{{profile.username}}</h1>
         <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
             <div class="form-group">
