@@ -11,7 +11,7 @@ export class ProfileFollowersComponent implements OnInit {
   @Input()
   private profile;
 
-  private followers;
+  public followers;
 
   constructor(private profileService : ProfileService) { }
 

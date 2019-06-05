@@ -9,14 +9,14 @@ import { ProfileService } from 'src/app/services/profile.service';
 export class KweetViewComponent implements OnInit {
 
   @Input()
-  private kweets;
+  public kweets;
 
   constructor(private profileService : ProfileService) { }
 
   ngOnInit() {
   }
 
-  private postKweet(message){
+  public postKweet(message){
     this.profileService.postKweet(message).then(data => {
       console.log(data);
       this.kweets.unshift(data);

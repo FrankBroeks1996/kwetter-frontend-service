@@ -10,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ProfileEditComponent implements OnInit {
 
   @Input()
-  private profile;
+  public profile;
 
   @Output()
   private changeEditMethod = new EventEmitter();

@@ -10,8 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
-  private profile;
-  private navIndex = 0;
+  public profile;
+  public navIndex = 0;
   public isEditing = false;
   public isSelf = false;
 
@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  private setNavIndex(index){
+  public setNavIndex(index){
     this.navIndex = index;
     console.log(index);
   }

@@ -9,7 +9,7 @@ import { KweetService } from 'src/app/services/kweet.service';
 })
 export class ProfileKweetsComponent implements OnInit {
 
-  private kweets;
+  public kweets;
 
   @Input()
   private profile;

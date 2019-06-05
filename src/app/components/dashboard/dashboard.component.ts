@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  private kweets;
+  public kweets;
 
   private resultPage = 1;
   private resultSize = 10;

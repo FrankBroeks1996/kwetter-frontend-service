@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  private kweets;
+  public kweets;
 
   private searchQuery;
   private resultPage = 1;
@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
   }
 
   @HostListener('scroll', ['$event'])
-  private loadMoreResults(event){
+  public loadMoreResults(event){
     const top = event.target.scrollTop;
     const height = event.target.scrollHeight;
     const offset = event.target.offsetHeight;

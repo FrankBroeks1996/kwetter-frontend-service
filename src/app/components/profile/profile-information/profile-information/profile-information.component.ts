@@ -12,9 +12,9 @@ export class ProfileInformationComponent implements OnInit {
   private profile;
 
   @Input()
-  private isSelf;
+  public isSelf;
 
-  private isFollowing;
+  public isFollowing;
 
   @Output()
   private changeEditMethod = new EventEmitter();

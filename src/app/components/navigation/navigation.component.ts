@@ -11,7 +11,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 })
 export class NavigationComponent implements OnInit {
 
-  private username;
+  public username;
 
   constructor(private authService : AuthService,
               private router : Router) {
@@ -22,16 +22,16 @@ export class NavigationComponent implements OnInit {
     this.username = this.authService.getUsernameFromToken();
   }
 
-  private isLoggedIn(){
+  public isLoggedIn(){
     return this.authService.isAuthorised();
   }
 
-  private logout(){
+  public logout(){
     this.authService.logout();
     this.router.navigate([`/login`]);
   }
 
-  private search(searchQuery){
+  public search(searchQuery){
     if(searchQuery){
       this.router.navigate([`/search/${searchQuery}`]);
     }
