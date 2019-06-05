@@ -1,0 +1,42 @@
+#profile-navigation{
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    background-color: white;
+    padding: 0;
+}
+
+.nested-component{
+    width: 100%;
+}
+
+div.profile-wrapper{
+    width: 100%;
+}
+
+li.profile-nav-item{
+    height: 40px;
+    display: flex;
+    float: left;
+}
+
+a.profile-nav-link{
+    height: 40px;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 14px;
+    padding: 13px 5px 13px 5px;
+    color: #66757f;
+    font-weight: bold;
+}
+
+a.profile-nav-link:hover{
+    border-bottom: 2px solid #1c94e0;
+    color: #1c94e0;
+}
+
+a.profile-nav-link.active{
+    border-bottom: 2px solid #1c94e0;
+    color: #1c94e0;
+}
+

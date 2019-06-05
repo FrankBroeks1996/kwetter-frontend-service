@@ -1,0 +1,7 @@
+{
+    "files.eol": "\n",
+    "eslint.enable": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "eslint.autoFixOnSave": true
+}

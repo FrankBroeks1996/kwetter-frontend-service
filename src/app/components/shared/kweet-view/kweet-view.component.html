@@ -1,0 +1,38 @@
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <form id="post-kweet-form">
+        <div class="col-md-10">
+          <input #message class="form-control" name="message" type="text" placeholder="What's happening" />
+        </div>
+        <div class="col-md-2">
+          <input type="button" class="btn btn-primary" value="Post" (click)="postKweet(message.value)"/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="kweet-container col-md-12">
+      <div *ngFor="let kweet of kweets">
+        <div>
+          <div class="card kweet-card">
+            <div class="card-body">
+              <div class="row">
+              <div class="col-md-1">
+                  <img class="kweet-author-picture"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFBgO_ed2rAuqV9Txlfdgr4tLk_MgyqRZODx8wTl92NCNX0Pqd" />
+              </div>
+              <div class="col-md-11">
+                <p class="kweet-author-name">
+                  {{kweet.username}}
+                </p>
+                  {{kweet.message}}
+              </div>
+              </div>  
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>

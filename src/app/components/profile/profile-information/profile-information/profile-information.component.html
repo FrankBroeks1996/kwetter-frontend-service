@@ -1,0 +1,26 @@
+<div>
+  <img id="profile-picture"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFBgO_ed2rAuqV9Txlfdgr4tLk_MgyqRZODx8wTl92NCNX0Pqd" />
+  <h1>{{profile.username}}</h1>
+  <label class="text-info profile-label">Bio:</label>
+  {{profile.bio}}
+  <label class="text-info profile-label">Location:</label>
+  {{profile.location}}
+  <label class="text-info profile-label">Website:</label>
+  {{profile.website}}
+  <!-- <button name="submit" type="button" class="profile-btn btn btn-primary" (click)="editProfile()">Edit Profile</button> -->
+
+  <div *ngIf="isSelf;else followButton">
+    <button name="submit" type="button" class="profile-btn btn btn-primary" (click)="editProfile()">Edit Profile</button>
+  </div>
+
+  <ng-template #followButton>
+    <div *ngIf="isFollowing; else unFollowButton">
+        <button name="submit" type="button" class="profile-btn btn btn-primary" (click)="unFollowUser()">Unfollow</button>
+    </div>
+
+    <ng-template #unFollowButton>
+        <button name="submit" type="button" class="profile-btn btn btn-primary" (click)="followUser()">Follow</button>
+    </ng-template>
+  </ng-template>
+</div>

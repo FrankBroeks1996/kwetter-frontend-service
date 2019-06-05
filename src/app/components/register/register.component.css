@@ -1,0 +1,20 @@
+div.register-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+form.register-form{
+    width: 380px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+}
+
+a.login-link{
+    position: absolute;
+    padding: 15px;
+    bottom: 0;
+    right: 0;
+}

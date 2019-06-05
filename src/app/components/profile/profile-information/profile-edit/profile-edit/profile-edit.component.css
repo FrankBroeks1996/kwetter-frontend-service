@@ -1,0 +1,10 @@
+#profile-picture{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.profile-btn{
+    width: 100%;
+    margin-top: 10px;
+}

@@ -1,0 +1,48 @@
+#post-kweet-form{
+    width: 100%;
+    padding: 10px 5px;
+    background-color: white;
+}
+
+#post-kweet-form div{
+    display: inline-block;
+}
+
+#post-kweet-form div input{
+    width: 100%;
+    height: 40px;
+}
+
+#post-kweet-form div input[type=text]{
+    border-radius: 10px;
+}
+
+#post-kweet-form div input[type=button]{
+    margin-top: -5px;
+}
+
+.kweet-card{
+    margin-top: 10px;
+}
+
+.kweet-card-header{
+    display: flex;
+}
+
+.kweet-author-picture{
+    width: 100%;
+    border-radius: 50px;
+}
+
+/* .kweet-author-name{
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0px 0px 0px 15px;
+    align-self: center;
+} */
+
+.kweet-author-name{
+    font-size: 20px;
+    font-weight: bold;
+}

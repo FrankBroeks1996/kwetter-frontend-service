@@ -1,0 +1,25 @@
+<ng-container *ngIf="profile">
+    <div>
+        <img id="profile-picture"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFBgO_ed2rAuqV9Txlfdgr4tLk_MgyqRZODx8wTl92NCNX0Pqd" />
+        <h1>{{profile.username}}</h1>
+        <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
+            <div class="form-group">
+                <label for="bio" class="text-info">Bio:</label>
+                <input #bio type="text" name="bio" class="form-control" formControlName="bio"/>
+            </div>
+            <div class="form-group">
+                <label for="location" class="text-info">Location:</label>
+                <input #location type="text" name="location" class="form-control" formControlName="location"/>
+            </div>
+            <div class="form-group">
+                <label for="site" class="text-info">Site:</label>
+                <input #site type="text" name="site" class="form-control" formControlName="site"/>
+            </div>
+            <div class="form-group">
+                <input name="submit" type="submit" class="profile-btn btn btn-primary" value="Save changes" />
+            </div>
+        </form>
+      </div>
+      
+</ng-container>

@@ -1,0 +1,43 @@
+
+<div class="container">
+  <div id="profile-information" class="row justify-content-center align-items-center">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+                <div *ngIf="isEditing;else profileInformation">
+                    <app-profile-edit (changeEditMethod)="setEdit($event)" [profile]="profile"></app-profile-edit>
+                </div>
+                
+                <ng-template #profileInformation><app-profile-information (changeEditMethod)="setEdit($event)" [isSelf]="isSelf" *ngIf="profile" [profile]="profile"></app-profile-information></ng-template>
+                  
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row col-md-12" >
+              <ul id="profile-navigation">
+                <li class="profile-nav-item">
+                  <a [ngClass]="{'active' : navIndex === 0 }" class="profile-nav-link" (click)="setNavIndex(0)">Kweets</a>
+                </li>
+                <li class="profile-nav-item">
+                  <a [ngClass]="{'active' : navIndex === 1 }" class="profile-nav-link" (click)="setNavIndex(1)">Following</a>
+                </li>
+                <li class="profile-nav-item">
+                  <a [ngClass]="{'active' : navIndex === 2 }" class="profile-nav-link" (click)="setNavIndex(2)">Followers</a>
+                </li>
+              </ul>
+              <ng-container *ngIf="profile">
+                <div [ngSwitch]="navIndex" class="profile-wrapper">
+                  <app-profile-kweets *ngSwitchCase="0" [profile]="profile"></app-profile-kweets>
+                  <app-profile-following *ngSwitchCase="1" [profile]="profile"></app-profile-following>
+                  <app-profile-followers *ngSwitchCase="2" [profile]="profile"></app-profile-followers>
+                </div>
+              </ng-container>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
