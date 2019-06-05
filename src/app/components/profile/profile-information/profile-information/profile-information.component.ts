@@ -9,7 +9,7 @@ import { ProfileService } from 'src/app/services/profile.service';
 export class ProfileInformationComponent implements OnInit {
 
   @Input()
-  private profile;
+  public profile;
 
   @Input()
   public isSelf;

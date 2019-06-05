@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
   }
 
   @HostListener('scroll', ['$event'])
-  private loadMoreKweets(event){
+  public loadMoreKweets(event){
     const top = event.target.scrollTop;
     const height = event.target.scrollHeight;
     const offset = event.target.offsetHeight;
