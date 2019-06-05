@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - '8'
+
+addons:
+  sonarcloud:
+    organization: "frankbroeks1996-github"
+    token:
+      secure: $SONAR_TOKEN
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - npm install
+
+script:
+  - sonar-scanner
