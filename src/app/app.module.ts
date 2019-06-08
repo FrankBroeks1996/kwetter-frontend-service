@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileInformationComponent } from './components/profile/profile-information/profile-information/profile-information.component';
 import { ProfileEditComponent } from './components/profile/profile-information/profile-edit/profile-edit/profile-edit.component';
@@ -17,6 +16,7 @@ import { KweetViewComponent } from './components/shared/kweet-view/kweet-view.co
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +32,14 @@ import { SearchComponent } from './components/search/search.component';
     KweetViewComponent,
     NavigationComponent,
     RegisterComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
