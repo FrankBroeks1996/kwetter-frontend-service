@@ -28,9 +28,6 @@ export class DashboardComponent implements OnInit {
     this.socketService.createWebsocket(this.authService.getUsernameFromToken()).then(data => {
       data.onmessage = (event) => {
         this.kweets.unshift(JSON.parse(event.data));
-        console.log(event.data);
-        console.log(this.kweets);
-        
       }
     });
   }
