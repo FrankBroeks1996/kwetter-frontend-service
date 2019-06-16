@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
+import { KweetSearchComponent } from './components/search/kweet-search/kweet-search.component';
+import { UserViewComponent } from './components/shared/user-view/user-view.component';
+import { UserSearchComponent } from './components/search/user-search/user-search.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { LoginComponent } from './components/login/login.component';
     NavigationComponent,
     RegisterComponent,
     SearchComponent,
+    KweetSearchComponent,
+    UserViewComponent,
+    UserSearchComponent,
   ],
   imports: [
     BrowserModule,

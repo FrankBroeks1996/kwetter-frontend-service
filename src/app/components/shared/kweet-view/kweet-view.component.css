@@ -45,4 +45,6 @@
 .kweet-author-name{
     font-size: 20px;
     font-weight: bold;
+    width: 100%;
+    display: inline-block;
 }

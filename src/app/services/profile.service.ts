@@ -10,14 +10,11 @@ export class ProfileService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-	public async getUser(username){
+	public async getUserById(id){
 		return await new Promise((resolve, reject) =>
-			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/getUserByName/${username}`, {
+			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/getUserById/${id}`, {
 					responseType: "json",
-					observe: "response",
-					headers: new HttpHeaders({
-						'Authorization': localStorage.getItem('token')
-					})
+					observe: "response"
 			}).subscribe((response) => {
 				resolve(response.body);
 			}, (error) => {
@@ -26,9 +23,22 @@ export class ProfileService {
 		);
 	}
 
-	public async editProfile(username, bio, location, site){
+	public async getUserByUsername(username){
+		return await new Promise((resolve, reject) =>
+			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/getUserByUsername/${username}`, {
+					responseType: "json",
+					observe: "response"
+			}).subscribe((response) => {
+				resolve(response.body);
+			}, (error) => {
+				reject(error);
+			})
+		);
+	}
+
+	public async editProfile(id, bio, location, site){
 		var requestData = {
-			username: username,
+			username: id,
 			bio: bio,
 			location: location,
 			website: site
@@ -51,12 +61,9 @@ export class ProfileService {
 
 	public async getUserKweets(username){
 		return await new Promise((resolve, reject) =>
-			this.http.get(`http://localhost:8080/Kwetter/api/v1/kweet/getAllKweets/${username}`, {
+			this.http.get(`http://localhost:8080/kwetter-kweet-service/api/v1/kweet/getAllKweets/${username}`, {
 					responseType: "json",
-					observe: "response",
-					headers: new HttpHeaders({
-						'Authorization': localStorage.getItem('token')
-					})
+					observe: "response"
 			}).subscribe((response) => {
 				resolve(response.body);
 			}, (error) => {
@@ -71,7 +78,7 @@ export class ProfileService {
 		};
 
 		return await new Promise((resolve, reject) =>
-			this.http.post("http://localhost:8080/Kwetter/api/v1/kweet/post", requestData, {
+			this.http.post("http://localhost:8080/kwetter-kweet-service/api/v1/kweet/post", requestData, {
 					responseType: "json",
 					observe: "response",
 					headers: new HttpHeaders({
@@ -85,14 +92,11 @@ export class ProfileService {
 		);
 	}
 
-	public async getFollowers(username){
+	public async getFollowers(userId){
 		return await new Promise((resolve, reject) =>
-			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/getFollowers/${username}`, {
+			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/getFollowers/${userId}`, {
 					responseType: "json",
-					observe: "response",
-					headers: new HttpHeaders({
-						'Authorization': localStorage.getItem('token')
-					})
+					observe: "response"
 			}).subscribe((response) => {
 				resolve(response.body);
 			}, (error) => {
@@ -101,14 +105,11 @@ export class ProfileService {
 		);
 	}
 
-	public async getFollowing(username){
+	public async getFollowing(userId){
 		return await new Promise((resolve, reject) =>
-			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/getFollowing/${username}`, {
+			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/getFollowing/${userId}`, {
 					responseType: "json",
-					observe: "response",
-					headers: new HttpHeaders({
-						'Authorization': localStorage.getItem('token')
-					})
+					observe: "response"
 			}).subscribe((response) => {
 				resolve(response.body);
 			}, (error) => {
@@ -147,9 +148,9 @@ export class ProfileService {
 		);
 	}
 
-	public async isFollowing(username){
+	public async isFollowing(userId){
 		return await new Promise((resolve, reject) =>
-			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/isFollowing/${username}`, {
+			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/isFollowing/${userId}`, {
 				observe: "response",
 				headers: new HttpHeaders({
 					'Authorization': localStorage.getItem('token')
@@ -160,5 +161,18 @@ export class ProfileService {
 				reject(error);
 			})
 		);
+	}
+
+	public async getSearchResult(searchQuery, resultPage, resultSize){
+		return await new Promise((resolve, reject) => {
+			this.http.get(`http://localhost:8080/Kwetter/api/v1/user/search/${searchQuery}?resultPage=${resultPage}&resultSize=${resultSize}`, {
+				responseType: "json",
+				observe: "response"
+			}).subscribe((response) => {
+				resolve(response.body);
+			}, (error) => {
+				reject(error);
+			})
+		});
 	}
 }

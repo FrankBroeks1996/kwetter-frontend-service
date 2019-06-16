@@ -28,7 +28,7 @@ export class ProfileEditComponent implements OnInit {
   }
 
   private async editProfile(){
-    await this.profileService.editProfile(this.profile.username, this.editProfileForm.get("bio").value, this.editProfileForm.get("location").value, this.editProfileForm.get("site").value).then((data) => {
+    await this.profileService.editProfile(this.profile.id, this.editProfileForm.get("bio").value, this.editProfileForm.get("location").value, this.editProfileForm.get("site").value).then((data) => {
       this.profile = data;
       this.changeEditMethod.emit({value:false, profile:this.profile});
     });

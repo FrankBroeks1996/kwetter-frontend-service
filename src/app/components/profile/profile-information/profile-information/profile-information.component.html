@@ -15,12 +15,14 @@
   </div>
 
   <ng-template #followButton>
-    <div *ngIf="isFollowing; else unFollowButton">
-        <button name="submit" type="button" class="profile-btn btn btn-primary" (click)="unFollowUser()">Unfollow</button>
-    </div>
+    <div *ngIf="isLoggedIn()">
+      <div *ngIf="isFollowing; else unFollowButton">
+          <button name="submit" type="button" class="profile-btn btn btn-primary" (click)="unFollowUser()">Unfollow</button>
+      </div>
 
-    <ng-template #unFollowButton>
-        <button name="submit" type="button" class="profile-btn btn btn-primary" (click)="followUser()">Follow</button>
-    </ng-template>
+      <ng-template #unFollowButton>
+          <button name="submit" type="button" class="profile-btn btn btn-primary" (click)="followUser()">Follow</button>
+      </ng-template>
+    </div>  
   </ng-template>
 </div>

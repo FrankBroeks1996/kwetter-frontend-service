@@ -18,7 +18,7 @@ export class ProfileKweetsComponent implements OnInit {
 
   ngOnInit() {
     if(this.profile){
-      this.profileService.getUserKweets(this.profile.username).then(data => {
+      this.profileService.getUserKweets(this.profile.id).then(data => {
         console.log(data);
         this.kweets = data;
       }).catch(error => {

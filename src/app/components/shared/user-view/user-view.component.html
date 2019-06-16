@@ -1,11 +1,12 @@
 <div class="card-columns">
-  <div *ngFor="let follower of followers">
-    <div class="card follow-card">
+  <div *ngFor="let user of users">
+    <div class="card user-card">
       <img class="image-header" src="http://www.dierenafbeeldingen.com/data/media/32/aap.jpg" alt="profile-banner-picture"/>
-      <div class="follow-body">
+      <div class="user-body">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFBgO_ed2rAuqV9Txlfdgr4tLk_MgyqRZODx8wTl92NCNX0Pqd" alt="profile-picture"/>
-        <a routerLink="/profile/{{follower.username}}">{{follower.username}}</a>
+        <a routerLink="/profile/{{user.username}}">{{user.username}}</a>
       </div>
     </div>
   </div>
 </div>
+  

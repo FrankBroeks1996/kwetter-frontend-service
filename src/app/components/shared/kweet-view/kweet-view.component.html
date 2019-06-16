@@ -1,5 +1,5 @@
 <div>
-  <div class="row">
+  <div class="row" *ngIf="postEnabled">
     <div class="col-md-12">
       <form id="post-kweet-form">
         <div class="col-md-10">
@@ -23,9 +23,9 @@
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFBgO_ed2rAuqV9Txlfdgr4tLk_MgyqRZODx8wTl92NCNX0Pqd" alt="author-picture" />
               </div>
               <div class="col-md-11">
-                <p class="kweet-author-name">
-                  {{kweet.username}}
-                </p>
+                <a class="kweet-author-name" routerLink="/profile/{{kweet.author.username}}">
+                  {{kweet.author.username}}
+                </a>
                   {{kweet.message}}
               </div>
               </div>  
