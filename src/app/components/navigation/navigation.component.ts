@@ -16,10 +16,12 @@ export class NavigationComponent implements OnInit {
   constructor(private authService : AuthService,
               private router : Router) {
                 this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-               }
+              }
 
   ngOnInit() {
-    this.username = this.authService.getUsernameFromToken();
+    if(this.authService.isAuthorised()){
+      this.username = this.authService.getUsernameFromToken();
+    }
   }
 
   public isLoggedIn(){

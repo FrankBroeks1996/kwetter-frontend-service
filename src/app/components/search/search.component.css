@@ -1,9 +1,37 @@
-div.scrolling{
-    overflow-y: scroll;
-    position: relative;
-    height: calc(100vh - 55px);
+#search-navigation{
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    background-color: white;
+    padding: 0;
+    display: inline-block;
 }
 
-div.scrolling::-webkit-scrollbar { 
-    width: 0 !important 
+li.search-nav-item{
+    height: 40px;
+    display: flex;
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+a.search-nav-link{
+    height: 40px;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 14px;
+    padding: 13px 5px 13px 5px;
+    color: #66757f;
+    font-weight: bold;
+    width: 100%;
+}
+
+a.search-nav-link:hover{
+    border-bottom: 2px solid #1c94e0;
+    color: #1c94e0;
+}
+
+a.search-nav-link.active{
+    border-bottom: 2px solid #1c94e0;
+    color: #1c94e0;
 }

@@ -10,7 +10,7 @@ export class KweetService {
 
   public async getDashboard(resultPage, resultSize){
 		return await new Promise((resolve, reject) =>
-			this.http.get(`http://localhost:8080/Kwetter/api/v1/kweet/getDashboard?resultPage=${resultPage}&resultSize=${resultSize}`, {
+			this.http.get(`http://localhost:8080/kwetter-kweet-service/api/v1/kweet/getDashboard?resultPage=${resultPage}&resultSize=${resultSize}`, {
 					responseType: "json",
 					observe: "response",
 					headers: new HttpHeaders({
@@ -26,12 +26,9 @@ export class KweetService {
 
 	public async getSearchResult(searchQuery, resultPage, resultSize){
 		return await new Promise((resolve, reject) => {
-			this.http.get(`http://localhost:8080/Kwetter/api/v1/kweet/search/${searchQuery}?resultPage=${resultPage}&resultSize=${resultSize}`, {
+			this.http.get(`http://localhost:8080/kwetter-kweet-service/api/v1/kweet/search/${searchQuery}?resultPage=${resultPage}&resultSize=${resultSize}`, {
 				responseType: "json",
-				observe: "response",
-				headers: new HttpHeaders({
-					'Authorization': localStorage.getItem('token')
-				})
+				observe: "response"
 			}).subscribe((response) => {
 				resolve(response.body);
 			}, (error) => {

@@ -2,7 +2,7 @@
   <div class="navigation-buttons">
     <ul>
       <li class="menu-item align-items-center"><a routerLinkActive="active" routerLink="/home">Dashboard</a></li>
-      <li class="menu-item align-items-center"><a routerLinkActive="active" routerLink="/profile/{{username}}">Profile</a></li>
+      <li *ngIf="isLoggedIn()" class="menu-item align-items-center"><a routerLinkActive="active" routerLink="/profile/{{username}}">Profile</a></li>
     </ul>
   </div>
   <form class="search-form" (keyup.enter)="search(searchQuery.value)">  

@@ -22,11 +22,13 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     const paramUsername = this.route.snapshot.paramMap.get("username");
-    if(paramUsername === this.authService.getUsernameFromToken()){
-      this.isSelf = true;
+    if(this.authService.isAuthorised()){
+      if(paramUsername === this.authService.getUsernameFromToken()){
+        this.isSelf = true;
+      }
     }
 
-    this.profileService.getUser(paramUsername).then(data => {
+    this.profileService.getUserByUsername(paramUsername).then(data => {
       this.profile = data;
     }).catch(error => {
         console.log(error);

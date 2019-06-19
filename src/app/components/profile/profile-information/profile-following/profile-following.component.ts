@@ -16,7 +16,7 @@ export class ProfileFollowingComponent implements OnInit {
   constructor(private profileService : ProfileService) { }
 
   ngOnInit() {
-    this.profileService.getFollowing(this.profile.username).then(data => {
+    this.profileService.getFollowing(this.profile.id).then(data => {
       console.log(data);
       this.following = data;
     }).catch(error => {

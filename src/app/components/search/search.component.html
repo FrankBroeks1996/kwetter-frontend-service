@@ -1,3 +1,19 @@
-<div class="container scrolling" (scroll)="loadMoreResults($event)">
-  <app-kweet-view [kweets]="kweets"></app-kweet-view>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ul id="search-navigation">
+        <li class="search-nav-item">
+          <a [ngClass]="{'active' : navIndex === 0 }" class="search-nav-link" (click)="setNavIndex(0)">Kweets</a>
+        </li>
+        <li class="search-nav-item">
+          <a [ngClass]="{'active' : navIndex === 1 }" class="search-nav-link" (click)="setNavIndex(1)">Users</a>
+        </li>
+      </ul>
+    </div>
+  
+    <div [ngSwitch]="navIndex" class="col-md-12">
+      <app-kweet-search *ngSwitchCase="0"></app-kweet-search>
+      <app-user-search *ngSwitchCase="1"></app-user-search>
+    </div>
+  </div>
 </div>

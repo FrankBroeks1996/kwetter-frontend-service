@@ -9,7 +9,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   public isAuthorised(){
-    if(localStorage.getItem("token") !== null){
+    if(localStorage.getItem("token")){
       return true;
     }else{
       return false;
@@ -20,6 +20,7 @@ export class AuthService {
     var base64Url = localStorage.getItem("token").split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     var data = JSON.parse(window.atob(base64));
+    console.log(data);
     return data.sub;
   }
 
